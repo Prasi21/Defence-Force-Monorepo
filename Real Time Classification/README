@@ -1,0 +1,18 @@
+How to connect Movella Dot to PC and perform Real Time Data Inference on Windows
+
+1. Download Movella Dot PC SDK from this link
+https://www.movella.com/support/software-documentation?hsCtaTracking=39d661fa-2ea8-4478-955e-01d0d8885f14%7C3ad1c7d6-9c3a-42e9-b424-5b15b9d0924e
+
+2. Follow the steps on this guide 
+https://movella.my.site.com/XsensKnowledgebase/s/article/Movella-DOT-PC-SDK-Guide?language=en_US
+
+3. Run `python movelladot_pc_sdk_receive_data.py`. This should detect your IMU and record the angles
+This will automatically record the quaternions and free acceleration in a log file. Modify to run longer.
+
+4. Download a classification model for the motion data. Preferably in a ".keras" format. 
+Add the path to the model in stream_data.py.
+
+
+5. Run `python stream_data.py`.
+I used Windows OS and a GPU to run inference without issue. 
+
